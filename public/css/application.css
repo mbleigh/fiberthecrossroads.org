@@ -1,0 +1,92 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  color: #207ECF;
+}
+
+body {
+  font-size: 0.9em;
+}
+
+#bottom {
+  color: #888;
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+}
+
+#bottom a {
+  color: #444;
+}
+
+.big {
+  font-size: 1.4em;
+}
+
+p {
+  line-height: 150%;
+}
+
+#title {
+  font-weight: 300;
+  font-size: 5em;
+  line-height: 1em;
+  margin: 0.4em 0 0.6em;
+  text-align: center;
+}
+
+.cta {
+  text-align: center;
+  background: #f5f5f5;
+  padding: 1em;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  margin-bottom: 1em;
+}
+
+.cta .btn {
+  font-size: 1em;
+  margin-left: 0.5em;
+}
+
+.progress-to-date {
+  margin: 1em 0 1em;
+  font-size: 4em;
+  text-align: center;
+  font-weight: 300;
+  color: #999;
+}
+
+.progress-to-date span {
+  font-weight: 600;
+  color: #207ecf;
+}
+
+.opp {
+  margin-bottom: 1em;
+}
+
+ul.invites {
+  margin: 2.5em 4em 5em;
+}
+
+ul.invites li {
+  text-indent: -999em;
+  width: 24px;
+  height: 24px;
+  background: #ddd;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 3px 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;'
+}
+
+ul.invites li.active {
+  background: #207ECF;
+  border: 2px solid #224499;
+  -webkit-box-shadow: 0 0 10px #207ECF;
+}

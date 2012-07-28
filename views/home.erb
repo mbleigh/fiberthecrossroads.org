@@ -1,0 +1,39 @@
+<p class='big cta'>Two minutes and ten dollars could add $2,000-$5,000 to your property value. <a href='http://bit.ly/fiber-crossroads' class='btn btn-large btn-primary'>Pre-Register Now!</a></p>
+
+<div class='progress-to-date'>
+  <span class='active'><%= @active %></span> down, <span class='pending'><%= @threshold - @active %></span> to go.</span>
+</div>
+
+<ul class='invites'>
+  <% (0...@threshold).each_with_index do |num, i| %>
+  <li class='<%= i < @active ? "active" : "pending" %>'><%= i < @active ? "Active" : "Pending" %></li>
+  <% end %>
+</ul>
+
+<p class='big opp'>Google Fiber represents a fantastic opportunity for the Crossroads. 
+  Perhaps more than anyone else in Kansas City, our creative community
+  could benefit greatly from unprecendented access to the internet. But if we're
+  going to get it, and get it soon, everyone has to pitch in!</p>
+
+<div class='row'>
+  <div class='span4'>
+    <h2>Spread the Word</h2>
+    <p>The best thing you can do is tell your neighbors to sign up today!
+      Send them to <a href="http://www.fiberthecrossroads.org/">fiberthecrossroads.org</a>
+      or directly to <a href="https://fiber.google.com/">fiber.google.com</a> and tell
+      them why fiber is going to be a game-changer for the Crossroads!</p>
+  </div>
+
+  <div class='span4'>
+    <h2>Map and Conquer</h2>
+    <p>Are you intimately famliar with the apartment/condo complexes in the Crossroads?
+      Come <a href="http://bit.ly/crossroads-fiber-map">help us map and contact</a> every
+      last one of them.</a></p>
+  </div>
+
+  <div class='span4'>
+    <h2>Tell us Your Ideas!</h2>
+    <p>This website was put together hastily to help rally Crossroads citizens, but we
+      want to know how we can do more. Come <a href="https://groups.google.com/forum/#!forum/fiber-the-crossroads">tell us on our Google Group</a> ways that we can further engage the community!</p>
+  </div>
+</div>
