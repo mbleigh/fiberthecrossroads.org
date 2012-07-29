@@ -21,5 +21,10 @@ task :fetch do
   $redis.hset "stats", "total_hoods", hoods.size
   $redis.hset "stats", "active_hoods", hoods.values.select{|h| h["invites"] >= h["invite_threshold"]}.size
 
+  hoods.values.each do |hood|
+    $redis.zadd "stats:hood_goals", (hood["invite_ratio_target"] * 100), hood["name"]
+    $redis.zadd "stats:rank", (hood["rank"]), hood["name"]
+  end
+
   puts "Fetched successfully at #{Time.now.to_s}"
 end

@@ -30,3 +30,21 @@
     <span class='number'><%= format_number @stats["active_hoods"] %></span>
   </div>
 </div>
+
+<div class='row'>
+  <div class='stat-list span6'>
+    <h3>Hardest Goal Fiberhoods</h3>
+    <ol>
+      <% $redis.zrevrange("stats:hood_goals", 0, 9, withscores: true).each do |(name,percent)| %><li><span class='value'><%= percent.to_i %>%</span> <span class='name'><%= name %></span></li>
+      <% end %>
+    </ol>
+  </div>
+
+  <div class='stat-list span6'>
+    <h3>Top Ranked Fiberhoods</h3>
+    <ol>
+      <% $redis.zrange("stats:rank", 0, 9, withscores: true).each do |(name,rank)| %><li><span class='value'><%= rank.to_i %></span> <span class='name'><%= name %></span></li>
+      <% end %>
+    </ol>
+  </div>
+</div>
