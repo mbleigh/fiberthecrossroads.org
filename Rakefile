@@ -15,5 +15,11 @@ task :fetch do
   $redis.set "info:last_fetched", Time.now.to_i
   $redis.set "info:last_modified", Time.now.to_i
 
+  $redis.hset "stats", "total_available", hoods.values.inject(0){|total,hood| total += hood["max_invites"]}
+  $redis.hset "stats", "total_threshold", hoods.values.inject(0){|total,hood| total += hood["invite_threshold"]}
+  $redis.hset "stats", "total_active", hoods.values.inject(0){|total,hood| total += hood["invites"]}
+  $redis.hset "stats", "total_hoods", hoods.size
+  $redis.hset "stats", "active_hoods", hoods.values.select{|h| h["invites"] >= h["invite_threshold"]}.size
+
   puts "Fetched successfully at #{Time.now.to_s}"
 end

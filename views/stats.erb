@@ -1,0 +1,32 @@
+<div class='well big'>In building this site, I needed to be able to access up-to-date
+  information about the Crossroads' current status as a fiberhood. This revealed some
+  other interesting information, which I'm collecting here.</div>
+
+<div class='row'>
+  <div class='stat span4'>
+    <h3>Eligible Homes</h3>
+    <span class='number'><%= format_number @stats["total_available"] %></span>
+  </div>
+  
+  <div class='stat span4' title="The total number of homes that would need to pre-register to activate all fiberhoods.">
+    <h3>Total Goal Homes</h3>
+    <span class='number'><%= format_number @stats["total_threshold"] %></span>
+  </div>
+
+  <div class='stat span4'>
+    <h3>Pre-Registrations</h3>
+    <span class='number'><%= format_number @stats["total_active"] %></span>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='stat span4'>
+    <h3>Fiberhoods</h3>
+    <span class='number'><%= format_number @stats["total_hoods"] %></span>
+  </div>
+  
+  <div class='stat span4' title="The total number of homes that would need to pre-register to activate all fiberhoods.">
+    <h3>Goal Met Fiberhoods</h3>
+    <span class='number'><%= format_number @stats["active_hoods"] %></span>
+  </div>
+</div>

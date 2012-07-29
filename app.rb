@@ -12,6 +12,12 @@ class Application < Sinatra::Base
     provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
   end
 
+  helpers do
+    def format_number(n)
+      n.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse
+    end
+  end
+
   get '/' do
     response['Cache-Control'] = 'public, max-age=600'
     etag $redis.get("info:last_modified")
@@ -21,6 +27,15 @@ class Application < Sinatra::Base
     @users = $redis.lrange("users:list", 0, -1)
 
     erb :home
+  end
+
+  get '/stats' do
+    response['Cache-Control'] = 'public, max-age=600'
+    etag $redis.get("info:last_modified")
+
+    @stats = $redis.hgetall("stats")
+
+    erb :stats
   end
 
   get '/auth/:provider/callback' do
