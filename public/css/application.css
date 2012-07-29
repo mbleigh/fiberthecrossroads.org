@@ -128,3 +128,13 @@ ul.invites li.active {
 .social-links .twitter-share-button {
   vertical-align: bottom;
 }
+
+.social-links .gplus {
+  display: inline-block;
+  position: relative;
+}
+
+.social-links .gplus > div {
+  position: absolute;
+  top: -15px;
+}
