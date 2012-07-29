@@ -5,6 +5,7 @@ require 'bundler'
 Bundler.setup :default, (ENV['RAILS_ENV'] || :development).to_sym
 
 require 'sinatra'
+require 'sinatra/flash'
 require 'faraday'
 require 'multi_json'
 require 'redis'

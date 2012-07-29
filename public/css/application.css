@@ -4,7 +4,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 #bottom {
@@ -19,7 +19,7 @@ body {
 }
 
 .big {
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 
 p {
@@ -54,6 +54,7 @@ p {
   font-size: 4em;
   text-align: center;
   font-weight: 300;
+  line-height: 1em;
   color: #999;
 }
 
@@ -67,7 +68,7 @@ p {
 }
 
 ul.invites {
-  margin: 2.5em 4em 5em;
+  margin: 2.5em 10% 1em;
 }
 
 ul.invites li {
@@ -85,8 +86,36 @@ ul.invites li {
   box-sizing: border-box;'
 }
 
+ul.invites li.user {
+  text-indent: 0;
+}
+
+ul.invites li.user img {
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 10px #207ECF;
+  -moz-box-shadow: 0 0 10px #207ECF;
+  box-shadow: 0 0 10px #207ECF;
+}
+
 ul.invites li.active {
   background: #207ECF;
   border: 2px solid #224499;
   -webkit-box-shadow: 0 0 10px #207ECF;
+  -moz-box-shadow: 0 0 10px #207ECF;
+  box-shadow: 0 0 10px #207ECF;
+}
+
+.add-to-wall {
+  margin: 1em 0 5em;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.9em;
+}
+
+.add-to-wall:hover {
+  opacity: 1.0;
+}
+
+.add-to-wall .btn {
+  margin-left: 5px;
 }

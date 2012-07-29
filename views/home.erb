@@ -1,4 +1,4 @@
-<p class='big cta'>Two minutes and ten dollars could add $2,000-$5,000 to your property value. <a href='http://bit.ly/fiber-crossroads' class='btn btn-large btn-primary'>Pre-Register Now!</a></p>
+<p class='big cta'>Two minutes <span class='visible-desktop'>and ten dollars</span> could add $2,000-$5,000 to your property value. <a href='http://bit.ly/fiber-crossroads' class='btn btn-large btn-primary'>Pre-Register Now!</a></p>
 
 <!-- Data last fetched <%= Time.at($redis.get('info:last_fetched').to_i).to_s %> -->
 
@@ -8,9 +8,25 @@
 
 <ul class='invites'>
   <% (0...@threshold).each_with_index do |num, i| %>
-  <li class='<%= i < @active ? "active" : "pending" %>'><%= i < @active ? "Active" : "Pending" %></li>
+    <% if @users[i] && user = $redis.hgetall("users:" + @users[i]) %>
+      <li class='user'><% if user["link"] %><a href='<%= user["link"] %>' target='_blank'><% end %><img src="<%= user["image"] %>" width="24" height="24" title="<%= user["name"] %>" alt="<%= user["name"] %>"/><% if user["link"] %></a><% end %></li>
+    <% else %>
+      <li class='<%= i < @active ? "active" : "pending" %>'><%= i < @active ? "Active" : "Pending" %></li>
+    <% end %>
   <% end %>
 </ul>
+
+<% if session[:user] %>
+<div class='add-to-wall'>
+  Already pre-registered? Add your name to the wall!
+  <a href='/auth/twitter' class='btn btn-small btn-info'>Sign in with Twitter</a>
+  <a href='/auth/facebook' class='btn btn-small btn-primary'>Sign in with Facebook</a>
+</div>
+<% else %>
+<div class='add-to-wall'>
+  <b>Your name is up on the wall!</b> Thanks for helping us get Fiber to the Crossroads!
+</div>
+<% end %>
 
 <p class='big opp'>Google Fiber represents a fantastic opportunity for the Crossroads. 
   Perhaps more than anyone else in Kansas City, our creative community
