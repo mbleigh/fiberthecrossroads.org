@@ -1,5 +1,7 @@
 <p class='big cta'>Two minutes and ten dollars could add $2,000-$5,000 to your property value. <a href='http://bit.ly/fiber-crossroads' class='btn btn-large btn-primary'>Pre-Register Now!</a></p>
 
+<!-- Data last fetched <%= Time.at($redis.get('info:last_fetched').to_i).to_s %> -->
+
 <div class='progress-to-date'>
   <span class='active'><%= @active %></span> down, <span class='pending'><%= @threshold - @active %></span> to go.</span>
 </div>
@@ -27,7 +29,7 @@
   <div class='span4'>
     <h2>Map and Conquer</h2>
     <p>Are you intimately famliar with the apartment/condo complexes in the Crossroads?
-      Come <a href="http://bit.ly/crossroads-fiber-map">help us map and contact</a> every
+      Come <a href="http://bit.ly/fiber-crossroads-map">help us map and contact</a> every
       last one of them.</a></p>
   </div>
 
