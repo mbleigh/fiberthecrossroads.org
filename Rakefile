@@ -13,6 +13,7 @@ task :fetch do
   $redis.set "invites:threshold", hood["invite_threshold"]
   $redis.set "invites:max", hood["max_invites"]
   $redis.set "info:last_fetched", Time.now.to_i
+  $redis.set "info:last_modified", Time.now.to_i
 
   puts "Fetched successfully at #{Time.now.to_s}"
 end

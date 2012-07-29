@@ -13,6 +13,9 @@ class Application < Sinatra::Base
   end
 
   get '/' do
+    response['Cache-Control'] = 'public, max-age=600'
+    etag $redis.get("info:last_modified")
+
     @threshold = $redis.get("invites:threshold").to_i
     @active = $redis.get("invites:active").to_i
     @users = $redis.lrange("users:list", 0, -1)
@@ -37,6 +40,7 @@ class Application < Sinatra::Base
         $redis.sadd "users:set", "#{provider}:#{auth_hash.uid}"
         $redis.rpush "users:list", "#{provider}:#{auth_hash.uid}"
         $redis.hmset "users:#{provider}:#{auth_hash.uid}", *(user_hash.to_a.flatten)
+        $redis.set "info:last_modified", Time.now.to_i.to_s
       end
     end
 
