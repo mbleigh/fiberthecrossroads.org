@@ -119,3 +119,12 @@ ul.invites li.active {
 .add-to-wall .btn {
   margin-left: 5px;
 }
+
+.social-links {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.social-links .twitter-share-button {
+  vertical-align: bottom;
+}

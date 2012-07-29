@@ -4,13 +4,32 @@
     <title>Fiber the Crossroads - Helping to bring Google Fiber to the Crossroads fiberhood.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Created by Crossroads residents to help organize and encourage the adoption of Google Fiber in the Crossroads neighborhood of Kansas City.">
+    <meta property="og:title" content="Let&#039;s bring Google Fiber to the Crossroads!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.fiberthecrossroads.org" />
+    <meta property="og:image" content="http://www.fiberthecrossroads.org/img/rabbit.png" />
+    <meta property="og:site_name" content="Fiber the Crossroads" />
+    <meta property="fb:admins" content="12817565" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href="/css/application.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=394249887300750";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <div class='container'>
+      <div class='social-links'>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.fiberthecrossroads.org/" data-text="Lets bring #googlefiber to the Crossroads in #KC!" data-related="kccrossroads">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <div class="fb-like" data-href="http://www.fiberthecrossroads.org/" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+      </div>
       <h1 id='title'>Fiber the Crossroads</h1>
       <%= yield %>
       <footer id='bottom'>This website was created by <a href='http://twitter.com/mbleigh'>Michael Bleigh</a> and is <a href='https://github.com/mbleigh/fiberthecrossroads.org'>open source on GitHub</a>. This site is not affiliated with Google.</footer>
