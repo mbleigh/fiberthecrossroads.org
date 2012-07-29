@@ -18,13 +18,13 @@
 
 <% if session[:user] %>
 <div class='add-to-wall'>
-  Already pre-registered? Add your name to the wall!
-  <a href='/auth/twitter' class='btn btn-small btn-info'>Sign in with Twitter</a>
-  <a href='/auth/facebook' class='btn btn-small btn-primary'>Sign in with Facebook</a>
+  <b>Your name is up on the wall!</b> Thanks for helping us get Fiber to the Crossroads!
 </div>
 <% else %>
 <div class='add-to-wall'>
-  <b>Your name is up on the wall!</b> Thanks for helping us get Fiber to the Crossroads!
+  Already pre-registered? Add your name to the wall!
+  <a href='/auth/twitter' class='btn btn-small btn-info'>Sign in with Twitter</a>
+  <a href='/auth/facebook' class='btn btn-small btn-primary'>Sign in with Facebook</a>
 </div>
 <% end %>
 
